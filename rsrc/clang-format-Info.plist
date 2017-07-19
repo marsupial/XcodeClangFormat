@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>clang-format</string>
 	<key>CFBundleExecutable</key>
@@ -17,26 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>2.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(ORIGIN_SHA)</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
-			<key>XCSourceEditorCommandDefinitions</key>
-			<array>
-				<dict>
-					<key>XCSourceEditorCommandClassName</key>
-					<string>ClangFormatCommand</string>
-					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).ClangFormatCommand</string>
-					<key>XCSourceEditorCommandName</key>
-					<string>Format Source Code</string>
-				</dict>
-			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>ClangFormatExtension</string>
 		</dict>
@@ -44,6 +33,6 @@
 		<string>com.apple.dt.Xcode.extension.source-editor</string>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016 Mapbox. All rights reserved.</string>
+	<string>https://$(ORIGIN_URL)</string>
 </dict>
 </plist>

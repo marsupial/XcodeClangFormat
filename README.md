@@ -6,11 +6,11 @@ This plugin written for Xcode 8's new plugin infrastructure uses Clang's `libcla
 
 Open the app, select a predefined style, or open the `.clang-format` file from your project:
 
-![](screenshot-config.png)
+![](doc/screenshot-config.png)
 
 Then, use the <kbd>Format Source Code</kbd> command in Xcode's <kbd>Editor</kbd> menu:
 
-![](screenshot-format.png)
+![](doc/screenshot-format.png)
 
 Due to macOS Sandboxing restrictions, this Plugin behaves slightly differently compared to the command line `clang-format` command: It always uses the style selected in the configuration app, and will not use the nearest `.clang-format` file on disk.
 
@@ -24,14 +24,14 @@ Download the precompiled app or [build it yourself](#building), then open the ap
 
 Then, go to *System Preferences* → *Extensions*, and make sure that **clang-format** in the *Xcode Source Editor* section is checked:
 
-![](screenshot-extensions.png)
+![](doc/screenshot-extensions.png)
 
 
 ## Keyboard shortcut
 
 To define a keyboard shortcut, open *System Preferences*, click on *Keyboard*, and switch to the *Shortcuts* tab. In the list on the left, select *App Shortcuts*, then hit the <kbd>+</kbd> button. Select Xcode, enter `Format Source Code`, and define a shortcut of your liking.
 
-![](screenshot-shortcut.png)
+![](doc/screenshot-shortcut.png)
 
 
 ## Building

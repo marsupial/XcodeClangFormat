@@ -3,189 +3,140 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		559B23E31D7EBDA300937AB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B23E21D7EBDA300937AB3 /* AppDelegate.m */; };
-		559B23E61D7EBDA300937AB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B23E51D7EBDA300937AB3 /* main.m */; };
-		559B23E81D7EBDA300937AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559B23E71D7EBDA300937AB3 /* Assets.xcassets */; };
-		559B23EB1D7EBDA300937AB3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559B23E91D7EBDA300937AB3 /* MainMenu.xib */; };
-		559B24101D7EBDC400937AB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 559B23F81D7EBDB700937AB3 /* Cocoa.framework */; };
-		559B24161D7EBDC400937AB3 /* ClangFormatExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 559B24151D7EBDC400937AB3 /* ClangFormatExtension.m */; };
-		559B24191D7EBDC400937AB3 /* ClangFormatCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = 559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */; };
-		559B241D1D7EBDC400937AB3 /* clang-format.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 559B240F1D7EBDC400937AB3 /* clang-format.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		55BCFFFA1D80170F000EDB05 /* libcurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 557D38B71D7F270E00708269 /* libcurses.tbd */; };
+		2942AFF51F1D728200146702 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EBA3B31F1D6F1D00FF9DDD /* Cocoa.framework */; };
+		29EBA39E1F1D6F0B00FF9DDD /* XlangFormat.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA39D1F1D6F0B00FF9DDD /* XlangFormat.mm */; };
+		29EBA3A31F1D6F0B00FF9DDD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29EBA3A11F1D6F0B00FF9DDD /* MainMenu.xib */; };
+		29EBA3B41F1D6F1D00FF9DDD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EBA3B31F1D6F1D00FF9DDD /* Cocoa.framework */; };
+		29EBA3B81F1D6F1D00FF9DDD /* ClangFormatExtension.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA3B71F1D6F1D00FF9DDD /* ClangFormatExtension.mm */; };
+		29EBA3BB1F1D6F1D00FF9DDD /* ClangFormatCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29EBA3BA1F1D6F1D00FF9DDD /* ClangFormatCommand.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		559B241B1D7EBDC400937AB3 /* PBXContainerItemProxy */ = {
+		29EBA3BE1F1D6F1D00FF9DDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 559B23D61D7EBDA300937AB3 /* Project object */;
+			containerPortal = 29EBA3911F1D6F0B00FF9DDD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 559B240E1D7EBDC400937AB3;
+			remoteGlobalIDString = 29EBA3B01F1D6F1D00FF9DDD;
 			remoteInfo = "clang-format";
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		559B240A1D7EBDB700937AB3 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				559B241D1D7EBDC400937AB3 /* clang-format.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		556DCDEF1D7EF694005956C8 /* XcodeClangFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XcodeClangFormat.entitlements; sourceTree = "<group>"; };
-		557D38B71D7F270E00708269 /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
-		559B23DE1D7EBDA300937AB3 /* XcodeClangFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeClangFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		559B23E11D7EBDA300937AB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		559B23E21D7EBDA300937AB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		559B23E51D7EBDA300937AB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		559B23E71D7EBDA300937AB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		559B23EA1D7EBDA300937AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		559B23EC1D7EBDA300937AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		559B23F81D7EBDB700937AB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		559B240F1D7EBDC400937AB3 /* clang-format.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "clang-format.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		559B24131D7EBDC400937AB3 /* clang_format.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clang_format.entitlements; sourceTree = "<group>"; };
-		559B24141D7EBDC400937AB3 /* ClangFormatExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClangFormatExtension.h; sourceTree = "<group>"; };
-		559B24151D7EBDC400937AB3 /* ClangFormatExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClangFormatExtension.m; sourceTree = "<group>"; };
-		559B24171D7EBDC400937AB3 /* ClangFormatCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClangFormatCommand.h; sourceTree = "<group>"; };
-		559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ClangFormatCommand.mm; sourceTree = "<group>"; };
-		559B241A1D7EBDC400937AB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55BCFFF71D801362000EDB05 /* config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = config.xcconfig; sourceTree = "<group>"; };
-		55C8203F1D87F81300006D07 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		290E54E91F1FE42300561739 /* config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = config.xcconfig; path = XcodeClangFormat.xcodeproj/config.xcconfig; sourceTree = SOURCE_ROOT; };
+		29EBA3991F1D6F0B00FF9DDD /* XcodeClangFormat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeClangFormat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29EBA39D1F1D6F0B00FF9DDD /* XlangFormat.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XlangFormat.mm; sourceTree = "<group>"; };
+		29EBA3A21F1D6F0B00FF9DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		29EBA3A41F1D6F0B00FF9DDD /* XcodeClangFormat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XcodeClangFormat-Info.plist"; sourceTree = "<group>"; };
+		29EBA3A71F1D6F0B00FF9DDD /* XcodeClangFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XcodeClangFormat.entitlements; sourceTree = "<group>"; };
+		29EBA3B11F1D6F1D00FF9DDD /* clang-format.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "clang-format.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29EBA3B31F1D6F1D00FF9DDD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		29EBA3B71F1D6F1D00FF9DDD /* ClangFormatExtension.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ClangFormatExtension.mm; sourceTree = "<group>"; };
+		29EBA3BA1F1D6F1D00FF9DDD /* ClangFormatCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ClangFormatCommand.mm; sourceTree = "<group>"; };
+		29EBA3BC1F1D6F1D00FF9DDD /* clang-format-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "clang-format-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		559B23DB1D7EBDA300937AB3 /* Frameworks */ = {
+		29EBA3961F1D6F0B00FF9DDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2942AFF51F1D728200146702 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		559B240C1D7EBDC400937AB3 /* Frameworks */ = {
+		29EBA3AE1F1D6F1D00FF9DDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55BCFFFA1D80170F000EDB05 /* libcurses.tbd in Frameworks */,
-				559B24101D7EBDC400937AB3 /* Cocoa.framework in Frameworks */,
+				29EBA3B41F1D6F1D00FF9DDD /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		559B23D51D7EBDA300937AB3 = {
+		29EBA3901F1D6F0B00FF9DDD = {
 			isa = PBXGroup;
 			children = (
-				55BCFFF71D801362000EDB05 /* config.xcconfig */,
-				55C8203F1D87F81300006D07 /* LICENSE.md */,
-				559B23E01D7EBDA300937AB3 /* XcodeClangFormat */,
-				559B24111D7EBDC400937AB3 /* clang-format */,
-				559B23F71D7EBDB700937AB3 /* Frameworks */,
-				559B23DF1D7EBDA300937AB3 /* Products */,
+				290E54E91F1FE42300561739 /* config.xcconfig */,
+				29EBA39B1F1D6F0B00FF9DDD /* src */,
+				29EBA3B51F1D6F1D00FF9DDD /* rsrc */,
+				29EBA3B21F1D6F1D00FF9DDD /* Frameworks */,
+				29EBA39A1F1D6F0B00FF9DDD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		559B23DF1D7EBDA300937AB3 /* Products */ = {
+		29EBA39A1F1D6F0B00FF9DDD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				559B23DE1D7EBDA300937AB3 /* XcodeClangFormat.app */,
-				559B240F1D7EBDC400937AB3 /* clang-format.appex */,
+				29EBA3991F1D6F0B00FF9DDD /* XcodeClangFormat.app */,
+				29EBA3B11F1D6F1D00FF9DDD /* clang-format.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		559B23E01D7EBDA300937AB3 /* XcodeClangFormat */ = {
+		29EBA39B1F1D6F0B00FF9DDD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				556DCDEF1D7EF694005956C8 /* XcodeClangFormat.entitlements */,
-				559B23E11D7EBDA300937AB3 /* AppDelegate.h */,
-				559B23E21D7EBDA300937AB3 /* AppDelegate.m */,
-				559B23E71D7EBDA300937AB3 /* Assets.xcassets */,
-				559B23E91D7EBDA300937AB3 /* MainMenu.xib */,
-				559B23EC1D7EBDA300937AB3 /* Info.plist */,
-				559B23E41D7EBDA300937AB3 /* Supporting Files */,
+				29EBA39D1F1D6F0B00FF9DDD /* XlangFormat.mm */,
+				29EBA3B71F1D6F1D00FF9DDD /* ClangFormatExtension.mm */,
+				29EBA3BA1F1D6F1D00FF9DDD /* ClangFormatCommand.mm */,
 			);
-			path = XcodeClangFormat;
-			sourceTree = "<group>";
+			path = src;
+			sourceTree = SOURCE_ROOT;
 		};
-		559B23E41D7EBDA300937AB3 /* Supporting Files */ = {
+		29EBA3B21F1D6F1D00FF9DDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				559B23E51D7EBDA300937AB3 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		559B23F71D7EBDB700937AB3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				557D38B71D7F270E00708269 /* libcurses.tbd */,
-				559B23F81D7EBDB700937AB3 /* Cocoa.framework */,
+				29EBA3B31F1D6F1D00FF9DDD /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		559B24111D7EBDC400937AB3 /* clang-format */ = {
+		29EBA3B51F1D6F1D00FF9DDD /* rsrc */ = {
 			isa = PBXGroup;
 			children = (
-				559B24141D7EBDC400937AB3 /* ClangFormatExtension.h */,
-				559B24151D7EBDC400937AB3 /* ClangFormatExtension.m */,
-				559B24171D7EBDC400937AB3 /* ClangFormatCommand.h */,
-				559B24181D7EBDC400937AB3 /* ClangFormatCommand.mm */,
-				559B241A1D7EBDC400937AB3 /* Info.plist */,
-				559B24121D7EBDC400937AB3 /* Supporting Files */,
+				29EBA3A41F1D6F0B00FF9DDD /* XcodeClangFormat-Info.plist */,
+				29EBA3A71F1D6F0B00FF9DDD /* XcodeClangFormat.entitlements */,
+				29EBA3A11F1D6F0B00FF9DDD /* MainMenu.xib */,
+				29EBA3BC1F1D6F1D00FF9DDD /* clang-format-Info.plist */,
 			);
-			path = "clang-format";
-			sourceTree = "<group>";
-		};
-		559B24121D7EBDC400937AB3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				559B24131D7EBDC400937AB3 /* clang_format.entitlements */,
-			);
-			name = "Supporting Files";
+			path = rsrc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		559B23DD1D7EBDA300937AB3 /* XcodeClangFormat */ = {
+		29EBA3981F1D6F0B00FF9DDD /* XcodeClangFormat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 559B23EF1D7EBDA300937AB3 /* Build configuration list for PBXNativeTarget "XcodeClangFormat" */;
+			buildConfigurationList = 29EBA3AA1F1D6F0B00FF9DDD /* Build configuration list for PBXNativeTarget "XcodeClangFormat" */;
 			buildPhases = (
-				559B23DA1D7EBDA300937AB3 /* Sources */,
-				559B23DB1D7EBDA300937AB3 /* Frameworks */,
-				559B23DC1D7EBDA300937AB3 /* Resources */,
-				559B240A1D7EBDB700937AB3 /* Embed App Extensions */,
+				290E54E81F1FE3A000561739 /* ShellScript */,
+				29EBA3951F1D6F0B00FF9DDD /* Sources */,
+				29EBA3961F1D6F0B00FF9DDD /* Frameworks */,
+				29EBA3971F1D6F0B00FF9DDD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				559B241C1D7EBDC400937AB3 /* PBXTargetDependency */,
+				29EBA3BF1F1D6F1D00FF9DDD /* PBXTargetDependency */,
 			);
 			name = XcodeClangFormat;
-			productName = XcodeClangFormat;
-			productReference = 559B23DE1D7EBDA300937AB3 /* XcodeClangFormat.app */;
+			productName = XlangFormat;
+			productReference = 29EBA3991F1D6F0B00FF9DDD /* XcodeClangFormat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		559B240E1D7EBDC400937AB3 /* clang-format */ = {
+		29EBA3B01F1D6F1D00FF9DDD /* clang-format */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 559B241E1D7EBDC400937AB3 /* Build configuration list for PBXNativeTarget "clang-format" */;
+			buildConfigurationList = 29EBA3C11F1D6F1D00FF9DDD /* Build configuration list for PBXNativeTarget "clang-format" */;
 			buildPhases = (
-				559B240B1D7EBDC400937AB3 /* Sources */,
-				559B240C1D7EBDC400937AB3 /* Frameworks */,
-				559B240D1D7EBDC400937AB3 /* Resources */,
+				29EBA3AD1F1D6F1D00FF9DDD /* Sources */,
+				29EBA3AE1F1D6F1D00FF9DDD /* Frameworks */,
+				29EBA3AF1F1D6F1D00FF9DDD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -193,21 +144,28 @@
 			);
 			name = "clang-format";
 			productName = "clang-format";
-			productReference = 559B240F1D7EBDC400937AB3 /* clang-format.appex */;
+			productReference = 29EBA3B11F1D6F1D00FF9DDD /* clang-format.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		559B23D61D7EBDA300937AB3 /* Project object */ = {
+		29EBA3911F1D6F0B00FF9DDD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = Mapbox;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = greyangle;
 				TargetAttributes = {
-					559B23DD1D7EBDA300937AB3 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+					29EBA3981F1D6F0B00FF9DDD = {
+						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
+					};
+					29EBA3B01F1D6F1D00FF9DDD = {
+						CreatedOnToolsVersion = 9.0;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 1;
@@ -217,47 +175,37 @@
 							};
 						};
 					};
-					559B240E1D7EBDC400937AB3 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.Mac = {
-								enabled = 1;
-							};
-						};
-					};
 				};
 			};
-			buildConfigurationList = 559B23D91D7EBDA300937AB3 /* Build configuration list for PBXProject "XcodeClangFormat" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 29EBA3941F1D6F0B00FF9DDD /* Build configuration list for PBXProject "XcodeClangFormat" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 559B23D51D7EBDA300937AB3;
-			productRefGroup = 559B23DF1D7EBDA300937AB3 /* Products */;
+			mainGroup = 29EBA3901F1D6F0B00FF9DDD;
+			productRefGroup = 29EBA39A1F1D6F0B00FF9DDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				559B23DD1D7EBDA300937AB3 /* XcodeClangFormat */,
-				559B240E1D7EBDC400937AB3 /* clang-format */,
+				29EBA3981F1D6F0B00FF9DDD /* XcodeClangFormat */,
+				29EBA3B01F1D6F1D00FF9DDD /* clang-format */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		559B23DC1D7EBDA300937AB3 /* Resources */ = {
+		29EBA3971F1D6F0B00FF9DDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				559B23E81D7EBDA300937AB3 /* Assets.xcassets in Resources */,
-				559B23EB1D7EBDA300937AB3 /* MainMenu.xib in Resources */,
+				29EBA3A31F1D6F0B00FF9DDD /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		559B240D1D7EBDC400937AB3 /* Resources */ = {
+		29EBA3AF1F1D6F1D00FF9DDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,40 +214,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		290E54E81F1FE3A000561739 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/rsrc/LLVM.sh",
+				"$(PROJECT_DIR)/rsrc/config.py",
+			);
+			outputPaths = (
+				"$(PROJECT_FILE_PATH)/config.xcconfig",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ORIGIN=$(git config --get remote.origin.url)\nif [ -z \"$ORIGIN\" ]; then\n  for REMOTE in $(git remote show); do\n    ORIGIN=$(git config --get remote.${REMOTE}.url)\n    if [[ ! -z \"$ORIGIN\" ]]; then\n      break;\n    fi\n  done\nfi\n\n$PROJECT_DIR/rsrc/LLVM.sh > \"${SCRIPT_OUTPUT_FILE_0}\"\necho \"\" >> \"${SCRIPT_OUTPUT_FILE_0}\"\n$PROJECT_DIR/rsrc/config.py \"$ORIGIN\" $(git log --pretty=format:'%h' -n 1) >> \"${SCRIPT_OUTPUT_FILE_0}\"\n#touch \"${PROJECT_DIR}/rsrc/Base.lproj/MainMenu.xib\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		559B23DA1D7EBDA300937AB3 /* Sources */ = {
+		29EBA3951F1D6F0B00FF9DDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				559B23E61D7EBDA300937AB3 /* main.m in Sources */,
-				559B23E31D7EBDA300937AB3 /* AppDelegate.m in Sources */,
+				29EBA39E1F1D6F0B00FF9DDD /* XlangFormat.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		559B240B1D7EBDC400937AB3 /* Sources */ = {
+		29EBA3AD1F1D6F1D00FF9DDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				559B24161D7EBDC400937AB3 /* ClangFormatExtension.m in Sources */,
-				559B24191D7EBDC400937AB3 /* ClangFormatCommand.mm in Sources */,
+				29EBA3B81F1D6F1D00FF9DDD /* ClangFormatExtension.mm in Sources */,
+				29EBA3BB1F1D6F1D00FF9DDD /* ClangFormatCommand.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		559B241C1D7EBDC400937AB3 /* PBXTargetDependency */ = {
+		29EBA3BF1F1D6F1D00FF9DDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 559B240E1D7EBDC400937AB3 /* clang-format */;
-			targetProxy = 559B241B1D7EBDC400937AB3 /* PBXContainerItemProxy */;
+			target = 29EBA3B01F1D6F1D00FF9DDD /* clang-format */;
+			targetProxy = 29EBA3BE1F1D6F1D00FF9DDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		559B23E91D7EBDA300937AB3 /* MainMenu.xib */ = {
+		29EBA3A11F1D6F0B00FF9DDD /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				559B23EA1D7EBDA300937AB3 /* Base */,
+				29EBA3A21F1D6F0B00FF9DDD /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -307,16 +274,18 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		559B23ED1D7EBDA300937AB3 /* Debug */ = {
+		29EBA3A81F1D6F0B00FF9DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 290E54E91F1FE42300561739 /* config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -324,46 +293,69 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "rsrc/$(PROJECT_NAME).entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = CGDS99ALC5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"PROJECT_IDENTIFIER=@\\\"$(PROJECT_IDENTIFIER)\\\"",
+					"NS_STRING_ENUM=",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				HEADER_SEARCH_PATHS = (
+					"$(LLVM_INCLUDES)",
+					"$(LLVM_LIBDIR)/../include",
+				);
+				INFOPLIST_FILE = "rsrc/$(TARGET_NAME)-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(LLVM_LIBDIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"$(LLVM_CXXFLAGS)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(ORIGIN_URI)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.13;
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};
-		559B23EE1D7EBDA300937AB3 /* Release */ = {
+		29EBA3A91F1D6F0B00FF9DDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 290E54E91F1FE42300561739 /* config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -371,166 +363,135 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CODE_SIGN_ENTITLEMENTS = "rsrc/$(PROJECT_NAME).entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = CGDS99ALC5;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"PROJECT_IDENTIFIER=@\\\"$(PROJECT_IDENTIFIER)\\\"",
+					"NDEBUG=1",
+					"NS_STRING_ENUM=",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				HEADER_SEARCH_PATHS = (
+					"$(LLVM_INCLUDES)",
+					"$(LLVM_LIBDIR)/../include",
+				);
+				INFOPLIST_FILE = "rsrc/$(TARGET_NAME)-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(LLVM_LIBDIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"$(LLVM_CXXFLAGS)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(ORIGIN_URI)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.13;
 			};
 			name = Release;
 		};
-		559B23F01D7EBDA300937AB3 /* Debug */ = {
+		29EBA3AB1F1D6F0B00FF9DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55BCFFF71D801362000EDB05 /* config.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = XcodeClangFormat/XcodeClangFormat.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = XcodeClangFormat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.XcodeClangFormat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		559B23F11D7EBDA300937AB3 /* Release */ = {
+		29EBA3AC1F1D6F0B00FF9DDD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55BCFFF71D801362000EDB05 /* config.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = XcodeClangFormat/XcodeClangFormat.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = XcodeClangFormat/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.XcodeClangFormat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		559B241F1D7EBDC400937AB3 /* Debug */ = {
+		29EBA3C21F1D6F1D00FF9DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55BCFFF71D801362000EDB05 /* config.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "clang-format/clang_format.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
-				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				INFOPLIST_FILE = "clang-format/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(LLVM_CXXFLAGS)",
-					"$(OTHER_CFLAGS)",
-				);
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(PROJECT_NAME).app/Contents/PlugIns";
+				LD_RUNPATH_SEARCH_PATHS = "$(LLVM_LIB)";
 				OTHER_LDFLAGS = (
-					"$(LLVM_LIBDIR)/libclangFormat.a",
-					"$(LLVM_LIBDIR)/libclangToolingCore.a",
-					"$(LLVM_LIBDIR)/libclangLex.a",
-					"$(LLVM_LIBDIR)/libclangBasic.a",
-					"$(LLVM_LIBDIR)/libclangRewrite.a",
-					"$(LLVM_LIBDIR)/libLLVMCore.a",
-					"$(LLVM_LIBDIR)/libLLVMSupport.a",
+					"-lLLVMCore",
+					"-lLLVMSupport",
+					"-lLLVMDemangle",
+					"-lclangBasic",
+					"-lclangLex",
+					"-lclangToolingCore",
+					"-lclangRewrite",
+					"-lclangFormat",
+					"-lncurses",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mapbox.XcodeClangFormat.clang-format";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				STRIP_STYLE = all;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		559B24201D7EBDC400937AB3 /* Release */ = {
+		29EBA3C31F1D6F1D00FF9DDD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55BCFFF71D801362000EDB05 /* config.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "clang-format/clang_format.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
-				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				INFOPLIST_FILE = "clang-format/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(LLVM_CXXFLAGS)",
-					"$(OTHER_CFLAGS)",
-				);
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/$(PROJECT_NAME).app/Contents/PlugIns";
+				LD_RUNPATH_SEARCH_PATHS = "$(LLVM_LIB)";
 				OTHER_LDFLAGS = (
-					"$(LLVM_LIBDIR)/libclangFormat.a",
-					"$(LLVM_LIBDIR)/libclangToolingCore.a",
-					"$(LLVM_LIBDIR)/libclangLex.a",
-					"$(LLVM_LIBDIR)/libclangBasic.a",
-					"$(LLVM_LIBDIR)/libclangRewrite.a",
-					"$(LLVM_LIBDIR)/libLLVMCore.a",
-					"$(LLVM_LIBDIR)/libLLVMSupport.a",
+					"-lLLVMCore",
+					"-lLLVMSupport",
+					"-lLLVMDemangle",
+					"-lclangBasic",
+					"-lclangLex",
+					"-lclangToolingCore",
+					"-lclangRewrite",
+					"-lclangFormat",
+					"-lncurses",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mapbox.XcodeClangFormat.clang-format";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				STRIP_STYLE = all;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		559B23D91D7EBDA300937AB3 /* Build configuration list for PBXProject "XcodeClangFormat" */ = {
+		29EBA3941F1D6F0B00FF9DDD /* Build configuration list for PBXProject "XcodeClangFormat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				559B23ED1D7EBDA300937AB3 /* Debug */,
-				559B23EE1D7EBDA300937AB3 /* Release */,
+				29EBA3A81F1D6F0B00FF9DDD /* Debug */,
+				29EBA3A91F1D6F0B00FF9DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		559B23EF1D7EBDA300937AB3 /* Build configuration list for PBXNativeTarget "XcodeClangFormat" */ = {
+		29EBA3AA1F1D6F0B00FF9DDD /* Build configuration list for PBXNativeTarget "XcodeClangFormat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				559B23F01D7EBDA300937AB3 /* Debug */,
-				559B23F11D7EBDA300937AB3 /* Release */,
+				29EBA3AB1F1D6F0B00FF9DDD /* Debug */,
+				29EBA3AC1F1D6F0B00FF9DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		559B241E1D7EBDC400937AB3 /* Build configuration list for PBXNativeTarget "clang-format" */ = {
+		29EBA3C11F1D6F1D00FF9DDD /* Build configuration list for PBXNativeTarget "clang-format" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				559B241F1D7EBDC400937AB3 /* Debug */,
-				559B24201D7EBDC400937AB3 /* Release */,
+				29EBA3C21F1D6F1D00FF9DDD /* Debug */,
+				29EBA3C31F1D6F1D00FF9DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 559B23D61D7EBDA300937AB3 /* Project object */;
+	rootObject = 29EBA3911F1D6F0B00FF9DDD /* Project object */;
 }
