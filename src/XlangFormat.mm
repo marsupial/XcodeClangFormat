@@ -25,6 +25,8 @@ struct Row {
 
 } // namespace
 
+@interface FormatTableView : NSTableView @end
+
 @interface XlangFormat : NSObject <NSApplicationDelegate, NSPathControlDelegate, NSTableViewDataSource> {
   NSUserDefaults* defaults;
   NSArray* custom;
@@ -39,7 +41,7 @@ struct Row {
 @property(weak) IBOutlet NSButton* chromiumStyle;
 @property(weak) IBOutlet NSButton* mozillaStyle;
 @property(weak) IBOutlet NSButton* webkitStyle;
-@property(weak) IBOutlet NSTableView* tableView;
+@property(weak) IBOutlet FormatTableView* tableView;
 
 @end
 
@@ -177,8 +179,8 @@ struct Row {
     [self synchronize: NSMakeRange(0, self.tableView.numberOfRows)];
 }
 
-- (IBAction)pathChanged:(id)sender {
-    NSTableRowView* row = (NSTableRowView*) [[((NSView*) sender) superview] superview];
+- (void) setPath:(NSView*)sender synchronize:(BOOL) synchronize {
+    NSTableRowView* row = (NSTableRowView*) [[sender superview] superview];
     Row R(row);
     // [R.path.URL.path isEqualToString:R.path.clickedPathItem.URL.path])
     NSString* name = [R.path.URL lastPathComponent];
@@ -199,8 +201,15 @@ struct Row {
     [R.name setStringValue: name];
     if (R.path.clickedPathItem.URL)
         R.path.URL = R.path.clickedPathItem.URL;
+
+    if (!synchronize)
+        return;
     NSUInteger Idx = [self.tableView rowForView:row];
     [self synchronize:NSMakeRange(Idx, 1)];
+}
+
+- (IBAction)pathChanged:(id)sender {
+    [self setPath:sender synchronize:TRUE];
 }
 
 - (void)pathControl:(NSPathControl*)pathControl willDisplayOpenPanel:(NSOpenPanel*)openPanel {
@@ -225,42 +234,54 @@ struct Row {
    return TRUE;
 }
 
+- (NSPathControl*) addRow:(NSURL*) path {
+    NSIndexSet* selection = [self.tableView selectedRowIndexes];
+    if (!selection.count)
+        selection = [NSIndexSet indexSetWithIndexesInRange: NSMakeRange(self.tableView.numberOfRows,1)];
+    else
+        selection = [NSIndexSet indexSetWithIndex: selection.firstIndex+1];
+	[self.tableView insertRowsAtIndexes: selection withAnimation:NSTableViewAnimationSlideUp];
+    NSView* tableCell = [self.tableView viewAtColumn:1 row:selection.firstIndex makeIfNecessary:TRUE];
+    NSPathControl* pathControl = [[tableCell subviews] objectAtIndex:0];
+
+	if (!path) {
+        if (![self chooseFile: pathControl]) {
+            [self.tableView removeRowsAtIndexes:selection
+                                  withAnimation:NSTableViewAnimationSlideDown];
+            return nil;
+        }
+    } else
+        pathControl.URL = path;
+	return pathControl;
+}
+
+- (void) removeRow {
+    NSIndexSet* selection = [self.tableView selectedRowIndexes];
+    if (!selection.count)
+        selection = [NSIndexSet indexSetWithIndexesInRange: NSMakeRange(self.tableView.numberOfRows-1,1)];
+    [self.tableView removeRowsAtIndexes:selection
+                    withAnimation:NSTableViewAnimationSlideDown];
+    if (custom) {
+        NSMutableArray* copy = [NSMutableArray arrayWithArray:custom];
+        [copy removeObjectsInRange:
+              NSMakeRange(selection.firstIndex, selection.count)];
+        custom = [copy copy];
+    }
+}
+
 - (IBAction)enableStyle:(id)sender {
     [defaults setBool:!((NSButton*) sender).state forKey:[sender identifier]];
     [defaults synchronize];
 }
 
 - (IBAction)addRemoveColumn:(id)sender {
-    NSIndexSet* selection = [self.tableView selectedRowIndexes];
-    NSView* tableCell = nil;
-    NSPathControl* path = nil;
     switch ([sender selectedSegment]) {
         case 0:
-            if (!selection.count)
-                selection = [NSIndexSet indexSetWithIndexesInRange: NSMakeRange(self.tableView.numberOfRows,1)];
-            else
-                selection = [NSIndexSet indexSetWithIndex: selection.firstIndex+1];
-            [self.tableView insertRowsAtIndexes: selection
-                            withAnimation:NSTableViewAnimationSlideUp];
-            tableCell = [self.tableView viewAtColumn:1 row:selection.firstIndex makeIfNecessary:TRUE];
-            path = [[tableCell subviews] objectAtIndex:0];
-            if (![self chooseFile: path]) {
-                [self.tableView removeRowsAtIndexes:selection
-                                withAnimation:NSTableViewAnimationSlideDown];
-            } else
+            if ([self addRow: nil])
                 [self synchronize];
             break;
         case 1:
-            if (!selection.count)
-                selection = [NSIndexSet indexSetWithIndexesInRange: NSMakeRange(self.tableView.numberOfRows-1,1)];
-            [self.tableView removeRowsAtIndexes:selection
-                            withAnimation:NSTableViewAnimationSlideDown];
-            if (custom) {
-                NSMutableArray* copy = [NSMutableArray arrayWithArray:custom];
-                [copy removeObjectsInRange:
-                      NSMakeRange(selection.firstIndex, selection.count)];
-                custom = [copy copy];
-            }
+            [self removeRow];
             [self synchronize];
             break;
         default:
@@ -341,3 +362,34 @@ extern "C" int main(int argc, const char * argv[]) {
     return NSApplicationMain(argc, argv);
 }
 
+@implementation FormatTableView
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    [self registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
+}
+
+- (NSDragOperation)draggingUpdated:(id < NSDraggingInfo >)sender {
+    const NSDragOperation drag = [super draggingEntered: sender];
+    if (drag != NSDragOperationNone)
+        return drag;
+    NSPasteboard* pboard = [sender draggingPasteboard];
+    if ( [[pboard types] containsObject:NSFilenamesPboardType] )
+        return NSDragOperationCopy;
+    return NSDragOperationNone;
+}
+
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
+    NSPasteboard* pboard = [sender draggingPasteboard];
+    if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
+        NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
+        XlangFormat* app = (XlangFormat*)[NSApp delegate];
+        for (NSString* file in files) {
+            NSPathControl* path = [app addRow: [NSURL fileURLWithPath: file]];
+            [app setPath:path synchronize:FALSE];
+        }
+        [app synchronize];
+        return TRUE;
+    }
+    return FALSE;
+}
+@end
