@@ -315,6 +315,14 @@ struct Row {
     [self.tableView insertRowsAtIndexes: [NSIndexSet indexSetWithIndexesInRange:
                                                     NSMakeRange(0,custom.count)]
                     withAnimation:NSTableViewAnimationEffectNone];
+
+    NSUInteger windowHeight = 125 + (custom.count*self.tableView.rowHeight);
+	CGSize windowSize = [self.window frame].size;
+    if (windowHeight > windowSize.height) {
+        windowSize.height = windowHeight;
+        [self.window setContentSize: windowSize];
+    }
+
     for (NSUInteger row = 0, N = custom.count; row < N; ++row) {
         NSMutableDictionary* dict = [custom objectAtIndex:row];
         if (!dict || ![dict isKindOfClass: [NSDictionary class]])
