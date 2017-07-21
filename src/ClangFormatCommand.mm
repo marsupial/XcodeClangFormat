@@ -13,6 +13,13 @@ typedef void (^CompletionHandler) (NSError* _NullableCompletionHandler);
 class ClangFormatHelper {
   const XCSourceEditorCommandInvocation* const m_Invoke;
   const CompletionHandler m_Completion;
+  const unsigned m_Overide;
+  enum {
+    kOverrideLanguage = 1,
+    kOverrideTabs = 2,
+    kOverrideIndent = 4,
+    kOverrideTabForIndent = 8
+  };
 
   // Generates a list of offsets for ever line in the array.
   static void updateOffsets(std::vector<size_t>& offsets,
@@ -29,8 +36,9 @@ class ClangFormatHelper {
   static NSString* msgFmt(const char*) { return @"%@: %s"; }
 
 public:
-  ClangFormatHelper(XCSourceEditorCommandInvocation* I, CompletionHandler C)
-      : m_Invoke(I), m_Completion(C) {}
+  ClangFormatHelper(XCSourceEditorCommandInvocation* I, CompletionHandler C,
+                    unsigned Flags = kOverrideLanguage)
+      : m_Invoke(I), m_Completion(C), m_Overide(Flags) {}
 
   static void error(NSString* Msg, CompletionHandler Complete) {
     Complete([NSError errorWithDomain:PROJECT_IDENTIFIER
@@ -45,6 +53,28 @@ public:
   }
 
   void operator()(clang::format::FormatStyle& format) const {
+    if (m_Overide & kOverrideLanguage) {
+      NSString* contentUTI = m_Invoke.buffer.contentUTI;
+      if ([contentUTI isEqualToString:(__bridge NSString*)kUTTypeObjectiveCSource]) {
+        format.Language = clang::format::FormatStyle::LK_ObjC;
+      }
+      else if ([contentUTI isEqualToString:(__bridge NSString*)kUTTypeCPlusPlusSource] ||
+               [contentUTI isEqualToString:(__bridge NSString*)kUTTypeCPlusPlusHeader] ||
+               [contentUTI isEqualToString:(__bridge NSString*)kUTTypeObjectiveCPlusPlusSource]) {
+        format.Language = clang::format::FormatStyle::LK_Cpp;
+      }
+      else if ([contentUTI isEqualToString:(__bridge NSString*)kUTTypeCSource] ||
+               [contentUTI isEqualToString:(__bridge NSString*)kUTTypeCHeader]) {
+        format.Language = clang::format::FormatStyle::LK_Cpp;
+      }
+    }
+    if (m_Overide & kOverrideTabs)
+      format.TabWidth = m_Invoke.buffer.tabWidth;
+    if (m_Overide & kOverrideIndent)
+      format.IndentWidth = m_Invoke.buffer.indentationWidth;
+    if (m_Overide & kOverrideTabForIndent && m_Invoke.buffer.usesTabsForIndentation)
+      format.UseTab = clang::format::FormatStyle::UT_ForIndentation;
+
     NSData* buffer =
         [m_Invoke.buffer.completeBuffer dataUsingEncoding:NSUTF8StringEncoding];
     llvm::StringRef code(reinterpret_cast<const char*>(buffer.bytes),
